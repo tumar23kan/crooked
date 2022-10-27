@@ -1,0 +1,82 @@
+@charset "UTF-8";
+* ::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg1:rgba(26, 246, 10, 0.78);
+  --bg2: #ef2828;
+  --bg3: #e8f109;
+  --bg4: #1e2abe;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.wrapper .section {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #090000;
+  font-family: sans-serif;
+  margin: 5rem;
+}
+.wrapper .section1 {
+  background: var(--bg1);
+  transform: skewY(-6deg);
+}
+.wrapper .section1 h1 {
+  transform: skewY(6deg);
+}
+.wrapper .section2 {
+  background: var(--bg2);
+  clip-path: polygon(100% 21%, 100% 100%, 0 75%, 0 0);
+}
+.wrapper .section3 {
+  background: var(--bg3);
+}
+.wrapper .section3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0; /* -75px деп койсомда болот бирок обём чон болуп кетет*/
+  border-top: 100px solid var(--bg3);
+  border-right: 100vw solid #ffffff; /* transperent*/
+}
+.wrapper .section4 {
+  background: var(--bg4);
+}
+.wrapper .section4::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 188px solid white;
+  border-right: 48vw solid transparent;
+}
+.wrapper .section4::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-bottom: 215px solid white;
+  border-left: 50vw solid transparent;
+}
+
+/*# sourceMappingURL=style.css.map */
